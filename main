@@ -1,0 +1,33 @@
+import tkinter
+
+#formula 1mile = 1.61km
+
+screen = tkinter.Tk()
+screen.title('Mile to Km Converter')
+screen.minsize(width=200, height=100)
+screen.config(padx=20, pady=20)
+
+miles_entry = tkinter.Entry()
+miles_entry.grid(column=1, row=0)
+miles_entry.config(width=10)
+
+equal_label = tkinter.Label(text='is equal to')
+equal_label.grid(column=0, row=1)
+
+answer = tkinter.Label(text=0)
+answer.grid(column=1,row=1)
+
+miles = tkinter.Label(text='Miles')
+miles.grid(column=3, row=0)
+
+km = tkinter.Label(text='Km')
+km.grid(column=3, row=1)
+
+def calculate ():
+    milage = int(miles_entry.get())*1.61
+    answer.config(text=f"{milage:.2f}")
+
+calc_button = tkinter.Button(text='Calculate', command=calculate)
+calc_button.grid(column=1,row=2)
+
+screen.mainloop()
